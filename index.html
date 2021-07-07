@@ -8,9 +8,43 @@
 </head>
 <body>
     <script>
-        function(){
+        function computerPlay(){
+            let num = Math.floor(Math.random() * 3 + 1); 
+            if(num === 1){
+                return "Rock";
+            } else if (num === 2){
+                return"Paper";
+            } else if (num === 3){
+                return "Scissors";
+            }
+        }
+        computerPlay();
+
+        function round(playerSelection, computerSelection){
+            if(playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "paper"){
+                return "Computer Wins Round! Paper beats Rock";
+            } else if (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "rock"){
+                return "Player Wins Round! Paper beats Rock";
+            } else if(playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "scissors"){
+                return "Computer Wins Round! Scissors beats Paper";
+            } else if (playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "paper"){
+                return "Player Wins Round! Scissors beats Paper";
+            } else if(playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "rock"){
+                return "Computer Wins Round! Rock beats Scissors";
+            } else if (playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "scissors"){
+                return "Player Wins Round! Rock beats Scissors";
+            } else {
+                return "Its A Draw !";
+            }
+        }
+
+        function game(){
             
         }
+
+        let player = prompt("choose rock or paper or scissors");
+        let computer = computerPlay();
+        console.log(round(player, computer));
     </script>
 </body>
 </html>
