@@ -4,61 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/6671aad6bc.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
     <title>Rock Paper Scissors Game</title>
 </head>
 <body>
-    <script>
-        let count = 0;
-        let playerCount = 0;
-        let computerCount = 0;
-
-        function computerPlay(){
-            let num = Math.floor(Math.random() * 3 + 1); 
-            return (num === 1) ? "Rock": (num === 2) ? "Paper": "Scissors";
-        }
-
-        function round(playerSelection, computerSelection){
-            if(playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "paper"){
-                computerCount++;
-                return "Computer Wins Round! Paper beats Rock";
-            } else if (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "rock"){
-                playerCount++;
-                return "Player Wins Round! Paper beats Rock";
-            } else if(playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "scissors"){
-                computerCount++;
-                return "Computer Wins Round! Scissors beats Paper";
-            } else if (playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "paper"){
-                playerCount++
-                return "Player Wins Round! Scissors beats Paper";
-            } else if(playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "rock"){
-                computerCount++;
-                return "Computer Wins Round! Rock beats Scissors";
-            } else if (playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "scissors"){
-                playerCount++;
-                return "Player Wins Round! Rock beats Scissors";
-            } else {
-                return "Its A Draw !";
-            }
-        }
-
-        function game(){
-            while(count <= 5){
-                let player = prompt("choose rock or paper or scissors");
-                let computer = computerPlay();
-                console.log(round(player, computer));
-                count++;
-                console.log("Current Player Score: " + playerCount);
-                console.log("Current Computer Score: " + computerCount);
-            }
-            if(playerCount > computerCount){
-                console.log("Player Wins !!!");
-            } else if (computerCount > playerCount){
-                console.log("Computer Wins !!!");
-            } else {
-                console.log("Its a draw");
-            }
-        }
-        game();
-    </script>
+    <div class="main">
+        <div class="heading">
+            <h1>ROCK PAPER SCISSORS GAME</h1>
+        </div>
+        <div class="content">
+            <div class="counter">
+                <div class="player_counter">
+                    <h2>Player</h2>
+                    <h2>0</h2>
+                </div>
+                <div class="computer_counter">
+                    <h2>Computer</h2>
+                    <h2>0</h2>
+                </div>
+            </div>
+            <div class="buttons">
+                    <button><i class="far fa-hand-rock fa-4x"></i></button>
+                    <button><i class="far fa-hand-paper fa-4x"></i></button>
+                    <button><i class="far fa-hand-scissors fa-4x"></i></button>
+                </div>
+            </div>
+            <div class="faceoff_heading">
+                <h1>Face Off</h1>
+            </div>
+            <div class="faceOff">
+            </div>
+        </div>
+    </div>
+    <script src="rps.js"></script>
 </body>
 </html>
