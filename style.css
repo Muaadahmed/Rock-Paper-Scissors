@@ -50,13 +50,40 @@ button {
 
 .faceOff {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     padding-top: 30px;
 }
 
+.faceOff > :first-child {
+    margin-right: 20px;
+}
+
+.faceOff > :last-child {
+    margin-right: 20px;
+}
+
+
+
 .faceoff_heading {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
     padding-top: 60px;
+}
+
+.opponents {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 60px;
+}
+
+.faceoff_player_ai_heading{
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    flex-direction: row;
+    width: 100%;
+    padding-top: 40px;
 }
