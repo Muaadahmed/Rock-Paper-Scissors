@@ -176,9 +176,6 @@ function faceOffFunction(){
 //Winner of the game displayed in the UI
 
 function winnerDisplay(winner){
-    console.log(`!!! ${winner.toUpperCase()} WINS !!!`);
-    console.log("Current Player Score: " + playerCount);
-    console.log("Current Computer Score: " + computerCount);
     buttons.style.display = 'none';
     winner_text_display.textContent = `!!! ${winner.toUpperCase()} WINS !!!`;
     opponents.appendChild(winner_text_display);
