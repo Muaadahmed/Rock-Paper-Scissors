@@ -13,3 +13,5 @@ Rock Paper Scissors Game
     4. DOM, eventlisteners and onclick functions to create a UI.
 
     5. Insert elements into the DOM dynamically using Javascript.
+
+    6. Using helper functions to reduce complexity within other functions.

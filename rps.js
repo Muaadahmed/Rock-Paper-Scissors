@@ -1,51 +1,75 @@
+// Round count
+
 let count = 0;
+
+//Player score
+
 let playerCount = 0;
+
+// Computer score
+
 let computerCount = 0;
+
+// Number of pairs of elements in the faceOff div
+
 let result_count = 1;
+
+//selecting faceOff div
+
 let faceOff;
+
+// initialize clicked; later on becomes 1, 2, or 3 depending on which button wwas clicked
+// used in faceOffFunction
+
 let clicked = 0;
+
+// works in conjunction with clicked; if clicked is 1 then playerChoice is rock
+//also used in faceOffFunction
+
 let playerChoice;
 
+
+//Results of the winnerDisplay function are displayed in this div
 const opponents = document.querySelector('.opponents');
+
+
 let winner_text_display = document.createElement('h1');
 
 
 const buttons = document.querySelector('.buttons');
+
+// Results of the computer
 
 function computerPlay(){
     let num = Math.floor(Math.random() * 3 + 1); 
     return (num === 1) ? "Rock": (num === 2) ? "Paper": "Scissors";
 }
 
+// determines who wins each round
+
 function round(playerSelection, computerSelection){
     if(playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "paper"){
         computerCount++;
         updateComputerScore();
-        console.log("Computer Wins Round! Paper beats Rock");
     } else if (playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "scissors"){
         playerCount++;
         updatePlayerScore();
-        console.log("Player Wins Round! Rock beats Scissors");
     } else if (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "rock"){
         playerCount++;
         updatePlayerScore();
-        console.log("Player Wins Round! Paper beats Rock");
     } else if(playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "scissors"){
         computerCount++;
         updateComputerScore();
-        console.log("Computer Wins Round! Scissors beats Paper");
     } else if (playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "paper"){
         playerCount++
         updatePlayerScore();
-        console.log("Player Wins Round! Scissors beats Paper");
     } else if(playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "rock"){
         computerCount++;
         updateComputerScore();
-        console.log("Computer Wins Round! Rock beats Scissors");
-    } else {
-        console.log("Its A Draw !");
-    }
+    } 
 }
+
+// update score to the Score board
 
 function updatePlayerScore(){
     const playerScoreBoard = document.querySelector('.player_default');
@@ -56,6 +80,8 @@ function updateComputerScore(){
     const computerScoreBoard = document.querySelector('.computer_default');
     computerScoreBoard.textContent = computerCount;
 }
+
+// Show computer results in the UI
 
 function computer_results(computer){
     if(computer === 'Rock'){
@@ -76,6 +102,8 @@ function computer_results(computer){
     }
 }
 
+// Handles all the button click events
+
 function game(){
     const rock_button = document.querySelector('.fa-hand-rock');
     const paper_button = document.querySelector('.fa-hand-paper');
@@ -90,6 +118,8 @@ function game(){
     scissors_button.addEventListener('click', faceOffFunction);
 }
 
+// helper functions that detect which of the 3 buttons was clicked 
+
 function rockBtnClicked(){
     clicked = 1;
 }
@@ -99,6 +129,8 @@ function paperBtnClicked(){
 function scissorsBtnClicked(){
     clicked = 3;
 }
+
+//shows results of the player and computer each round in the UI; under faceoff heading
 
 function faceOffFunction(){
     if(count < 5){
@@ -130,18 +162,20 @@ function faceOffFunction(){
     } else {
         if(playerCount > computerCount){
             let player = "player"
-            winnerOnConsole(player);
+            winnerDisplay(player);
         } else if (computerCount > playerCount){
             let artificialInteligence = "computer"
-            winnerOnConsole(artificialInteligence);
+            winnerDisplay(artificialInteligence);
         } else {
             let draw = "NO ONE";
-            winnerOnConsole(draw);
+            winnerDisplay(draw);
         }
     }
 }
 
-function winnerOnConsole(winner){
+//Winner of the game displayed in the UI
+
+function winnerDisplay(winner){
     console.log(`!!! ${winner.toUpperCase()} WINS !!!`);
     console.log("Current Player Score: " + playerCount);
     console.log("Current Computer Score: " + computerCount);
