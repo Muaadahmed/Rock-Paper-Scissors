@@ -161,10 +161,10 @@ function faceOffFunction(){
         
     } else {
         if(playerCount > computerCount){
-            let player = "PLAYER WINS !!!";
+            let player = "Player Wins";
             winnerDisplay(player);
         } else if (computerCount > playerCount){
-            let aI = "COMPUTER WINS !!!";
+            let aI = "Computer Wins";
             winnerDisplay(aI);
         } else {
             let draw = "DRAW";
@@ -177,7 +177,7 @@ function faceOffFunction(){
 
 function winnerDisplay(winner){
     buttons.style.display = 'none';
-    winner_text_display.textContent = `!!! ${winner.toUpperCase()} WINS !!!`;
+    winner_text_display.textContent = `!!! ${winner.toUpperCase()} !!!`;
     opponents.appendChild(winner_text_display);
 }
 
