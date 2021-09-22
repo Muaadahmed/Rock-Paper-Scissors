@@ -134,7 +134,7 @@ function scissorsBtnClicked(){
 
 function faceOffFunction(){
     if(count < 5){
-        if(faceOff.hasChildNodes() === true && result_count > 1){
+        if(faceOff.hasChildNodes() === true){
             while(faceOff.firstChild){
                 faceOff.removeChild(faceOff.firstChild);
             }
@@ -157,7 +157,6 @@ function faceOffFunction(){
         let computer = computerPlay();
         computer_results(computer);
         round(playerChoice, computer);
-        result_count++; 
         
     } else {
         if(playerCount > computerCount){
