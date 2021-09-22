@@ -161,13 +161,13 @@ function faceOffFunction(){
         
     } else {
         if(playerCount > computerCount){
-            let player = "player"
+            let player = "PLAYER WINS !!!";
             winnerDisplay(player);
         } else if (computerCount > playerCount){
-            let artificialInteligence = "computer"
-            winnerDisplay(artificialInteligence);
+            let aI = "COMPUTER WINS !!!";
+            winnerDisplay(aI);
         } else {
-            let draw = "NO ONE";
+            let draw = "DRAW";
             winnerDisplay(draw);
         }
     }
